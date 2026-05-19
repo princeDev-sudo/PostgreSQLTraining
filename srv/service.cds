@@ -4,7 +4,6 @@ using { PostgreSQLTraining as my } from '../db/schema.cds';
 service PostgreSQLTrainingService
 {
     @cds.redirection.target
-    @odata.draft.enabled
     entity User as
         projection on my.User;
 }

@@ -1,6 +1,48 @@
 <mvc:View controllerName="user.controller.user"
     xmlns:mvc="sap.ui.core.mvc"
-    xmlns="sap.m">
-    <Page id="page" title="{i18n>title}">
+    xmlns="sap.m"
+    xmlns:l="sap.ui.layout"
+    xmlns:f="sap.ui.layout.form">
+    <Page id="page" title="{i18n>title}" busy="{userModel>/busy}">
+        <content>
+            <f:SimpleForm
+                editable="true"
+                layout="ResponsiveGridLayout"
+                labelSpanXL="3" labelSpanL="3" labelSpanM="3" labelSpanS="12"
+                adjustLabelSpan="false"
+                columnsXL="1" columnsL="1" columnsM="1">
+                <f:content>
+                    <Label text="Key (UUID)" />
+                    <Input id="keyInput"
+                        value="{userModel>/key}"
+                        editable="false"
+                        placeholder="Auto-generated UUID" />
+
+                    <Label text="Name" required="true" />
+                    <Input id="nameInput"
+                        value="{userModel>/name}"
+                        placeholder="Enter full name" />
+
+                    <Label text="Age" required="true" />
+                    <Input id="ageInput"
+                        value="{userModel>/age}"
+                        type="Number"
+                        placeholder="Enter age" />
+
+                    <Label text="Email" required="true" />
+                    <Input id="emailInput"
+                        value="{userModel>/email}"
+                        type="Email"
+                        placeholder="Enter email address" />
+                </f:content>
+            </f:SimpleForm>
+        </content>
+        <footer>
+            <OverflowToolbar>
+                <ToolbarSpacer />
+                <Button text="Submit" type="Emphasized" press=".onSubmit" />
+                <Button text="Reset" press=".onReset" />
+            </OverflowToolbar>
+        </footer>
     </Page>
 </mvc:View>
