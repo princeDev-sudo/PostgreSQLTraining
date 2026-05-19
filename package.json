@@ -33,10 +33,7 @@
   "private": true,
   "cds": {
     "requires": {
-      "[production]": {
-        "db": "postgres",
-        "auth": "xsuaa"
-      },
+      "db": "postgres",
       "auth": {
         "[development]": {
           "kind": "dummy"
