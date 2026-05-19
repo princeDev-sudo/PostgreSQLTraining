@@ -1,0 +1,1 @@
+using PostgreSQLTrainingService as service from '../../srv/service';
